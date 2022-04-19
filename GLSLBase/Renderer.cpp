@@ -347,6 +347,9 @@ void Renderer::Lecture3()
 	int uniformLocTime = glGetUniformLocation(shader, "u_Time");
 	glUniform1f(uniformLocTime, gTime);
 
+	int uniformLocColor = glGetUniformLocation(shader, "u_Color");
+	glUniform4f(uniformLocColor, 1, 0, 0, 1);
+
 	glDrawArrays(GL_TRIANGLES, 0, 3);
 
 	gTime -= 0.01f;
