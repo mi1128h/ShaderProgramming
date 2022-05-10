@@ -46,11 +46,12 @@ void main()
 
 		newPos = newPos + 0.1 * amp * rotVec * sin(period * t * 2.0 * g_PI);
 		newPos.z = 0;
+		v_Color = a_Color * (1.0 - fractional);
 	}
 	else
 	{
 		newPos = vec3(-100000, -100000, -100000);
+			v_Color = vec4(0, 0, 0, 0);
 	}
 	gl_Position = vec4(newPos, 1);
-	v_Color = a_Color;
 }
