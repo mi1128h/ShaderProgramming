@@ -520,8 +520,12 @@ void Renderer::Lecture3_Particle()
 
 	int uniformTime = glGetUniformLocation(shader, "u_Time");
 	glUniform1f(uniformTime, gTime);
-	gTime += 0.0001f;
-	if (gTime > 1.f)gTime = 0.f;
+
+	int uniformAccel = glGetUniformLocation(shader, "u_Accel");
+	glUniform3f(uniformAccel, std::sin(gTime), std::cos(gTime), 0.0);
+
+	gTime += 0.01f;
+	//if (gTime > 1.f)gTime = 0.f;
 
 	glDrawArrays(GL_TRIANGLES, 0, m_VBOManyParticleVertexCount);
 
