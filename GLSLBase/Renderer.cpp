@@ -137,8 +137,8 @@ void Renderer::CreateParticle(int count)
 		randomValueX = 0.f;// ((float)rand() / (float)RAND_MAX - 0.5f) * 2.f; //-1~1
 		randomValueY = 0.f;// ((float)rand() / (float)RAND_MAX - 0.5f) * 2.f; //-1~1
 		randomValueZ = 0.f;
-		randomValueVX = ((float)rand() / (float)RAND_MAX - 0.5f) * 1.f; //-1~1
-		randomValueVY = ((float)rand() / (float)RAND_MAX - 0.5f) * 1.f; //-1~1
+		randomValueVX = ((float)rand() / (float)RAND_MAX - 0.5f) * 0.1f; //-1~1
+		randomValueVY = ((float)rand() / (float)RAND_MAX - 0.5f) * 0.1f; //-1~1
 		randomValueVZ = 0.f;
 		randomEmitTime = ((float)rand() / (float)RAND_MAX) * 5.f;
 		randomLifeTime = ((float)rand() / (float)RAND_MAX) * 2.f;
