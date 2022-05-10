@@ -6,5 +6,34 @@ in vec4 v_Color;
 
 void main()
 {
-	FragColor = v_Color;
+	// 내부가 채워진 원
+	/*
+	float dis = distance(v_Color.xy, vec2(0.5, 0.5));
+	vec4 newColor = vec4(0, 0, 0, 0);
+
+	if (dis < 0.5)
+	{
+		newColor = vec4(1, 1, 1, 1);
+	}
+	else
+	{
+		newColor = vec4(0, 0, 0, 0);
+	}
+	FragColor = newColor;
+	*/
+
+	// 반만 흰색
+	/*
+	if (v_Color.y > 0.5)
+		FragColor = vec4(1);
+	else
+		FragColor = vec4(0);
+	*/
+
+	// 내부가 빈 원
+	float dis = distance(v_Color.xy, vec2(0.5, 0.5));
+	if (dis > 0.48 && dis < 0.5)
+		FragColor = vec4(1);
+	else
+		FragColor = vec4(0);
 }
