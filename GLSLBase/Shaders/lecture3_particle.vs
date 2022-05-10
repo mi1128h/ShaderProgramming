@@ -4,11 +4,15 @@ in vec3 a_Position;
 in vec3 a_Velocity;
 in float a_EmitTime;
 in float a_LifeTime;
+in float a_Amp;
+in float a_Period;
 
 uniform float u_Time;
 uniform vec3 u_Accel;
 
 bool bLoop = true;	// ¼÷Á¦
+
+float g_PI = 3.14;
 
 void main()
 {
@@ -21,7 +25,12 @@ void main()
 		float fractional = fract(temp);
 		t = fractional * a_LifeTime;
 		tt = t * t;
-		newPos = a_Position + a_Velocity * t + 0.5 * u_Accel * tt;
+
+		float amp = a_Amp;
+		float period = a_Period;
+		newPos.x = a_Position.x + a_Velocity.x * t + 0.5 * u_Accel.x * tt;
+		newPos.y = a_Position.y + amp * sin(period * t * 2.0 * g_PI);
+		newPos.z = 0;
 	}
 	else
 	{
