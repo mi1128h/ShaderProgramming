@@ -7,6 +7,9 @@ in float a_LifeTime;
 in float a_Amp;
 in float a_Period;
 in float a_Value;
+in vec4 a_Color;
+
+out vec4 v_Color;
 
 uniform float u_Time;
 uniform vec3 u_Accel;
@@ -49,4 +52,5 @@ void main()
 		newPos = vec3(-100000, -100000, -100000);
 	}
 	gl_Position = vec4(newPos, 1);
+	v_Color = a_Color;
 }
