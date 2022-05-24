@@ -37,7 +37,6 @@ vec4 DrawCircle()
 vec4 DrawCircleLine()
 {
 	// ³»ºÎ°¡ ºó ¿ø
-	
 	float dis = distance(v_Color.xy, vec2(0.5, 0.5));
 	vec4 newColor = vec4(0, 0, 0, 0);
 
@@ -49,9 +48,17 @@ vec4 DrawCircleLine()
 	return newColor;
 }
 
+vec4 DrawMultipleCircles()
+{
+	float dis = distance(v_Color.xy, vec2(0.5, 0.5));// 0~0.5
+	float temp = sin(10 * dis * 4 * PI);
+	return vec4(temp);
+}
+
 void main()
 {
-	FragColor = CrossPattern();
+	//FragColor = CrossPattern();
 	//FragColor = DrawCircle();
 	//FragColor = DrawCircleLine();
+	FragColor = DrawMultipleCircles();
 }
