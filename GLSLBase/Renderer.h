@@ -39,6 +39,7 @@ private:
 	unsigned char * Renderer::loadBMPRaw(const char * imagepath, unsigned int& outWidth, unsigned int& outHeight);
 	void CreateParticle(int count);
 	void CreateLine(int count);
+	void CreateTextures();
 
 	bool m_Initialized = false;
 	
@@ -86,5 +87,7 @@ private:
 
 	GLuint m_VBOFullRect = 0;
 	GLuint m_LineFullRectShader = 0;
+
+	GLuint m_TexChecker = 0;
 };
 
