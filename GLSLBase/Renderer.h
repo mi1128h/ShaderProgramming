@@ -92,5 +92,6 @@ private:
 	GLuint m_TexChecker = 0;
 	GLuint m_TextureSandboxShader = 0;
 	GLuint m_VBOTexSandbox = 0;
+	GLuint m_TexRGB = 0;
 };
 
