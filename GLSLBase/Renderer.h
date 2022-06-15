@@ -30,6 +30,7 @@ public:
 	void Lecture5_LineSegment();
 	void Lecture5_FullRect();
 	void Lecture6_TexSandbox();
+	void Lecture9_DummyMesh();
 
 private:
 	void Initialize(int windowSizeX, int windowSizeY);
@@ -41,6 +42,7 @@ private:
 	void CreateParticle(int count);
 	void CreateLine(int count);
 	void CreateTextures();
+	void CreateDummyMesh();
 
 	bool m_Initialized = false;
 	
@@ -93,5 +95,9 @@ private:
 	GLuint m_TextureSandboxShader = 0;
 	GLuint m_VBOTexSandbox = 0;
 	GLuint m_TexRGB = 0;
+
+	GLuint m_DummyVertexCount = 0;
+	GLuint m_VBODummyMesh = 0;
+	GLuint m_DummyMeshShader = 0;
 };
 
